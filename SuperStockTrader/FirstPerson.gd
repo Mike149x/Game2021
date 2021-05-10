@@ -5,7 +5,7 @@ var acceleration = 20
 var gravity = 9.8
 var jump = 5
 
-var mouse_sensitivity = 0.05
+var mouse_sensitivity = 0.15
 
 var direction = Vector3()
 var velocity = Vector3()
@@ -31,6 +31,13 @@ func _process(delta):
 	direction = Vector3()
 	#This resets speed to zero when nothing pressed
 	
+	if not is_on_floor():
+		fall.y -= gravity * delta
+	
+	if Input.is_action_pressed("jump") and is_on_floor():
+		fall.y = jump
+	
+	
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
@@ -49,7 +56,9 @@ func _process(delta):
 		direction += transform.basis.x
 	
 	direction = direction.normalized()
-	move_and_slide(direction * speed, Vector3.UP)
+	velocity = velocity.linear_interpolate(direction * speed, acceleration * delta)
+	velocity = move_and_slide(velocity, Vector3.UP)
+	move_and_slide(fall, Vector3.UP)
 	
 
 
