@@ -3,7 +3,7 @@ extends KinematicBody
 var speed = 7
 var acceleration = 20
 var gravity = 9.8
-var jump = 7.5
+var jump = 6.5
 
 var mouse_sensitivity = 0.15
 

@@ -27,13 +27,13 @@ shape = SubResource( 1 )
 mesh = SubResource( 2 )
 material/0 = null
 
-[node name="StaticBody2" type="StaticBody" parent="."]
+[node name="Wall" type="StaticBody" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody2"]
+[node name="CollisionShape" type="CollisionShape" parent="Wall"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 5, 9, 1, 5 )
 shape = SubResource( 3 )
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody2"]
+[node name="MeshInstance" type="MeshInstance" parent="Wall"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 5, 9, 1, 5 )
 mesh = SubResource( 4 )
 material/0 = null
