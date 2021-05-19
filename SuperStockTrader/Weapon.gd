@@ -1,16 +1,17 @@
 extends Node
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export var fire_rate = 0.5
+export var clip_size = 5
+export var reload_rate = 1
 
+var current_ammo = clip_size
+var can_fire = true
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if Input.is_action_just_pressed("primary_fire") and can_fire:
+		print("Fired weapon")
+		can_fire = false
+		current_ammo -= 1
+		yield(get_tree().create_timer(fire_rate), "timeout")
+		can_fire = true
