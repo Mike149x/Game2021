@@ -42,16 +42,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 5, 9, 1, 5 )
 mesh = SubResource( 4 )
 material/0 = null
 
-[node name="Enemy" type="StaticBody" parent="." groups=[
+[node name="Enemy1" type="StaticBody" parent="." groups=[
 "Enemies",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23054, 2.94749, -8.13304 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Enemy"]
+[node name="MeshInstance" type="MeshInstance" parent="Enemy1"]
 mesh = SubResource( 5 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="Enemy"]
+[node name="CollisionShape" type="CollisionShape" parent="Enemy1"]
 shape = SubResource( 6 )
 
 [node name="Enemy2" type="StaticBody" parent="." groups=[
