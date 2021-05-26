@@ -35,4 +35,3 @@ material/0 = null
 [node name="Weapon" type="Node" parent="."]
 script = ExtResource( 2 )
 fire_rate = 1.0
-clip_size = 2
