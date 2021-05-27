@@ -7,7 +7,7 @@ export var clip_size = 5
 export var reload_rate = 1
 
 onready var ammo_label = $"/root/MainScene/UI/Label"
-onready var raycast = $"../Head/Camera/RayCast"
+onready var raycast = $"../Head/Camera/WeaponRayCast"
 var current_ammo = 0
 var can_fire = true
 var reloading = false
@@ -54,14 +54,15 @@ func fire():
 	
 
 func reload():
-	print("Reloading...")
-	reloading = true
-	yield(get_tree().create_timer(reload_rate), "timeout")
-	#creates timer, waits before reload_rate, then fires
-	current_ammo = clip_size
-	reloading = false
-	print("Reload Complete")
-	
+	if current_ammo < clip_size :
+		print("Reloading...")
+		reloading = true
+		yield(get_tree().create_timer(reload_rate), "timeout")
+		#creates timer, waits before reload_rate, then fires
+		current_ammo = clip_size
+		reloading = false
+		print("Reload Complete")
+		
 
 
 

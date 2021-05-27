@@ -10,11 +10,17 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
+"class": "Interactable",
+"language": "GDScript",
+"path": "res://Interactables/Interactable.gd"
+}, {
+"base": "Node",
 "class": "Weapon",
 "language": "GDScript",
 "path": "res://Weapon.gd"
 } ]
 _global_script_class_icons={
+"Interactable": "",
 "Weapon": ""
 }
 
