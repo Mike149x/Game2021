@@ -11,10 +11,9 @@ func _process(delta):
 		
 		if Input.is_action_just_pressed("Interact"):
 			collider.interact()
-	elif:
-		d
-
-
-
-
-
+	elif current_collider:
+		current_collider = null
+			
+			
+			
+		
