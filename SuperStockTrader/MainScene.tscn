@@ -4,16 +4,16 @@
 [ext_resource path="res://MainScene.gd" type="Script" id=2]
 [ext_resource path="res://Interactables/Interactable.gd" type="Script" id=3]
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="CubeMesh" id=1]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="BoxShape" id=2]
 
-[sub_resource type="SpatialMaterial" id=7]
+[sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 1, 0, 0, 1 )
 
-[sub_resource type="SphereMesh" id=5]
+[sub_resource type="SphereMesh" id=4]
 
-[sub_resource type="SphereShape" id=6]
+[sub_resource type="SphereShape" id=5]
 
 [node name="MainScene" type="Spatial"]
 script = ExtResource( 2 )
@@ -23,31 +23,29 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
 
 [node name="Ground" type="MeshInstance" parent="."]
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -1, 0 )
-mesh = SubResource( 2 )
+mesh = SubResource( 1 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Ground"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="BigWall" type="MeshInstance" parent="."]
 transform = Transform( -4.37114e-07, 1, -4.37114e-07, 0, -4.37114e-08, -10, -10, -4.37114e-08, 1.91069e-14, -10.5, 3.747, 0 )
-mesh = SubResource( 2 )
+mesh = SubResource( 1 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="BigWall"]
 transform = Transform( 1, -4.44089e-16, 2.11758e-22, 0, 1, -8.35187e-22, 0, -4.44089e-16, 1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="BigWall/StaticBody"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="red" type="MeshInstance" parent="."]
-transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -9.8515, 2.28409, -4.2301 )
-mesh = SubResource( 2 )
-material/0 = SubResource( 7 )
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -6.74151, 2.28409, -4.2301 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="red"]
 transform = Transform( 1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0, 0, 0 )
@@ -56,7 +54,7 @@ script = ExtResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="red/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0, 0, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Enemy1" type="StaticBody" parent="." groups=[
 "Enemies",
@@ -64,35 +62,35 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.68815, 2.94749, 8.71775 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Enemy1"]
-mesh = SubResource( 5 )
+mesh = SubResource( 4 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Enemy1"]
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="Enemy2" type="StaticBody" parent="." groups=[
 "Enemies",
 ]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.914373, 3.27706, 6.27162 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23351, 6.68904, 8.18391 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Enemy2"]
-mesh = SubResource( 5 )
+mesh = SubResource( 4 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Enemy2"]
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="Enemy3" type="StaticBody" parent="." groups=[
 "Enemies",
 ]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21902, 4.24367, 7.97833 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.52185, 4.24367, 7.97833 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Enemy3"]
-mesh = SubResource( 5 )
+mesh = SubResource( 4 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Enemy3"]
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
