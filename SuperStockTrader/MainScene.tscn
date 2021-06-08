@@ -43,12 +43,12 @@ transform = Transform( 1, -4.44089e-16, 2.11758e-22, 0, 1, -8.35187e-22, 0, -4.4
 shape = SubResource( 2 )
 
 [node name="red" type="MeshInstance" parent="."]
-transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -6.74151, 2.28409, -4.2301 )
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -9.98724, 2.28409, -4.2301 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="red"]
-transform = Transform( 1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, -8.35189e-23, 0, -8.35188e-23, 1, 0, 0, 0 )
 collision_layer = 2
 script = ExtResource( 3 )
 
