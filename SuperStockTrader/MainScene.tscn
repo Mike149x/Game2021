@@ -32,6 +32,36 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="Ground/StaticBody"]
 shape = SubResource( 2 )
 
+[node name="Ground2" type="MeshInstance" parent="."]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 20, -1, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Ground2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground2/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Tent1" type="MeshInstance" parent="."]
+transform = Transform( -1.54543e-07, 3.09086e-08, 10, 3.53553, 0.707107, 0, -3.53553, 0.707107, -4.37114e-07, 20, 4.572, 4 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Tent1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Tent1/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Tent2" type="MeshInstance" parent="."]
+transform = Transform( -1.54543e-07, -3.09086e-08, 10, -3.53553, 0.707107, 0, -3.53553, -0.707107, -4.37114e-07, 20, 4.572, -4.5 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Tent2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Tent2/StaticBody"]
+shape = SubResource( 2 )
+
 [node name="BigWall" type="MeshInstance" parent="."]
 transform = Transform( -4.37114e-07, 1, -4.37114e-07, 0, -4.37114e-08, -10, -10, -4.37114e-08, 1.91069e-14, -10.5, 3.747, 0 )
 mesh = SubResource( 1 )
@@ -43,19 +73,35 @@ transform = Transform( 1, -4.44089e-16, 2.11758e-22, 0, 1, -8.35187e-22, 0, -4.4
 [node name="CollisionShape" type="CollisionShape" parent="BigWall/StaticBody"]
 shape = SubResource( 2 )
 
-[node name="LightSwitch" type="MeshInstance" parent="."]
+[node name="LightSwitchDemo" type="MeshInstance" parent="."]
 transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -9.48727, 2.28409, -4.2301 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 3 )
 
-[node name="StaticBody" type="StaticBody" parent="LightSwitch"]
+[node name="StaticBody" type="StaticBody" parent="LightSwitchDemo"]
+transform = Transform( 1, 0, 0, 0, 1, -8.35189e-23, 0, -8.35188e-23, 1, 0, 0, 0 )
+collision_layer = 2
+script = ExtResource( 3 )
+light = NodePath("../../SpotLightDemo")
+on_by_default = false
+
+[node name="CollisionShape" type="CollisionShape" parent="LightSwitchDemo/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="LightSwitchDemo2" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 9.22607, 2.28409, -4.2301 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="LightSwitchDemo2"]
 transform = Transform( 1, 0, 0, 0, 1, -8.35189e-23, 0, -8.35188e-23, 1, 0, 0, 0 )
 collision_layer = 2
 script = ExtResource( 3 )
 light = NodePath("../../SpotLight")
 on_by_default = false
 
-[node name="CollisionShape" type="CollisionShape" parent="LightSwitch/StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="LightSwitchDemo2/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
@@ -126,9 +172,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SpotLight" type="SpotLight" parent="."]
+[node name="SpotLightDemo" type="SpotLight" parent="."]
 transform = Transform( 0.0954636, -0.03349, 0.994869, -0.995433, -0.00321174, 0.0954095, 0, -0.999434, -0.0336436, -5.93505, 2.57517, -4.08984 )
 spot_angle = 62.5286
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 4 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 26.9509, 7.07764, 0 )
+spot_range = 9.37759
+spot_angle = 42.1875
+
+[node name="SpotLight2" type="SpotLight" parent="SpotLight"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2884, 0, 0 )
+spot_range = 9.37759
+spot_angle = 42.1875

@@ -17,6 +17,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	#hides mouse from screen, can now turn indefinitely in any direction 
 
+#AIMING WITH MOUSE MOTION
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg2rad(-event.relative.x * mouse_sensitivity))
@@ -40,18 +41,14 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		
 		#when clicking ESC, mouse appears so user can exit
 	
 	if Input.is_action_pressed("move_forward"):
 		direction -= transform.basis.z
-	
 	if Input.is_action_pressed("move_backward"):
 		direction += transform.basis.z
-	
 	if Input.is_action_pressed("move_left"):
 		direction -= transform.basis.x
-			
 	if Input.is_action_pressed("move_right"):
 		direction += transform.basis.x
 		
