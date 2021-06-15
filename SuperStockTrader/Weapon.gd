@@ -38,7 +38,8 @@ func check_collision():
 		var collider = raycast.get_collider()
 		if collider.is_in_group("Enemies"):
 			collider.queue_free()
-			print("Killed" + collider.name)
+			#This line makes enemies disappear
+			print("Shot " + collider.name)
 
 func fire():
 	print("Fired weapon")
