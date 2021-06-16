@@ -2,10 +2,10 @@
 
 [sub_resource type="SphereMesh" id=1]
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.968627, 1, 0, 1 )
 
-[sub_resource type="SphereShape" id=2]
+[sub_resource type="SphereShape" id=3]
 
 [node name="Target" type="StaticBody" groups=[
 "Enemies",
@@ -13,7 +13,7 @@ albedo_color = Color( 0.968627, 1, 0, 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
+material/0 = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
