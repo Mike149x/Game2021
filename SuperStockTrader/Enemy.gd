@@ -3,12 +3,17 @@ extends KinematicBody
 export var speed = 100
 var space_state
 var target
+var gravity = 9.8
+var fall = Vector3()
 
 
 func _ready():
 	space_state = get_world().direct_space_state
 
 func _process(delta):
+	if not is_on_floor():
+		fall.y -= gravity * delta
+	
 	if target:
 		var result = space_state.intersect_ray(global_transform.origin, target.global_transform.origin)
 		if result.collider.is_in_group("Player"):

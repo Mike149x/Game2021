@@ -40,6 +40,8 @@ func check_collision():
 			collider.queue_free()
 			#This line makes enemies disappear
 			print("Shot " + collider.name)
+			
+	
 
 func fire():
 	print("Fired weapon")
