@@ -7,7 +7,7 @@
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Target.tscn" type="PackedScene" id=6]
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Spatial
 
 
@@ -18,15 +18,15 @@ func _ready():
 
 "
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="CubeMesh" id=2]
 
-[sub_resource type="BoxShape" id=2]
+[sub_resource type="BoxShape" id=3]
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 1, 0, 0, 1 )
 
 [node name="MainScene" type="Spatial"]
-script = SubResource( 7 )
+script = SubResource( 1 )
 
 [node name="FirstPerson" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
@@ -39,40 +39,40 @@ transform = Transform( 1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, 19.006, 2
 
 [node name="Ground" type="MeshInstance" parent="."]
 transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 20, 8, -1, -10 )
-mesh = SubResource( 1 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Ground"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground/StaticBody"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="BigWall" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 10, -11, 3, 0 )
-mesh = SubResource( 1 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="BigWall"]
 transform = Transform( 1, -4.44089e-16, 2.11758e-22, 0, 1, -8.35187e-22, 0, -4.44089e-16, 1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="BigWall/StaticBody"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="SmallWall" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 6, 4.78102, -2.10309, -9.82607 )
-mesh = SubResource( 1 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="SmallWall"]
 transform = Transform( 1, -4.44089e-16, 2.11758e-22, 0, 1, -8.35187e-22, 0, -4.44089e-16, 1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="SmallWall/StaticBody"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="LightSwitchDemo" type="MeshInstance" parent="."]
-transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -9.48727, 2.28409, -4.2301 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 6 )
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -10.5, 2.284, -4.5 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="LightSwitchDemo"]
 transform = Transform( 1, 0, 0, 0, 1, -8.35189e-23, 0, -8.35188e-23, 1, 0, 0, 0 )
@@ -83,7 +83,7 @@ on_by_default = false
 
 [node name="CollisionShape" type="CollisionShape" parent="LightSwitchDemo/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0, 0, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
