@@ -1,5 +1,6 @@
 extends Node
 
+
 class_name Weapon
 
 export var fire_rate = 0.5
