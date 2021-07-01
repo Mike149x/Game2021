@@ -12,7 +12,7 @@ script/source = "extends Spatial
 func _ready():
 	pass 
 
-
+#IamCringe
 "
 
 [node name="MainScene" type="Spatial"]
