@@ -1,5 +1,7 @@
 extends KinematicBody
 
+#THIS SCRIPT HOLDS ALL OF THE VARIABLES RELATING TO MOVEMENT
+
 var speed = 7
 var acceleration = 20
 var gravity = 9.8

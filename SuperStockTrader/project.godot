@@ -30,6 +30,10 @@ config/name="SuperStockTrader"
 run/main_scene="res://MainScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerStats="*res://PlayerMetrics/player_stats.gd"
+
 [input]
 
 move_forward={

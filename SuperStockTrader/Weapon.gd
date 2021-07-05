@@ -1,11 +1,12 @@
 extends Node
 
+#THIS SCRIPT HOLDS ALL OF THE VAIRABLES RELATING TO SHOOTING
 
 class_name Weapon
 
 export var fire_rate = 0.5
 export var clip_size = 5
-export var reload_rate = 1
+export var reload_speed = 1
 
 onready var ammo_label = $"/root/MainScene/UI/AmmoLabel"
 onready var raycast = $"../Head/Camera/WeaponRayCast"
@@ -61,8 +62,8 @@ func reload():
 	if current_ammo < clip_size :
 		print("Reloading...")
 		reloading = true
-		yield(get_tree().create_timer(reload_rate), "timeout")
-		#creates timer, waits before reload_rate, then fires
+		yield(get_tree().create_timer(reload_speed), "timeout")
+		#creates timer, waits before reload_speed, then fires
 		current_ammo = clip_size
 		reloading = false
 		print("Reload Complete")
