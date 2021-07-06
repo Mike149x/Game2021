@@ -2,12 +2,12 @@ extends KinematicBody
 
 #THIS SCRIPT HOLDS ALL OF THE VARIABLES RELATING TO MOVEMENT
 
-var speed = 7
+var speed = 10
 var acceleration = 20
 var gravity = 9.8
 var jump = 6.5
 
-var mouse_sensitivity = 0.15
+var mouse_sensitivity = 0.30
 
 var direction = Vector3()
 var velocity = Vector3()

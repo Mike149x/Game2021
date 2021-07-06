@@ -8,7 +8,7 @@ export var fire_rate = 0.5
 export var clip_size = 5
 export var reload_speed = 1
 
-onready var ammo_label = $"/root/MainScene/UI/AmmoLabel"
+onready var ammo_label = $"/root/UserInterface/UI/AmmoLabel"
 onready var raycast = $"../Head/Camera/WeaponRayCast"
 var current_ammo = 0
 var can_fire = true
